@@ -8,7 +8,7 @@ import ResetPassword from "../pages/ResetPassword";
 import Dashboard from "../pages/Dashboard";
 import Counsellors from "../pages/Counsellors";
 import MyAppointments from "../pages/MyAppointments";
-import PaymentCancel from "../pages/paymentCancel";
+import PaymentCancel from "../pages/PaymentCancel";
 import Chat from "../pages/Chat";
 import PaymentSuccess from "../pages/PaymentSuccess";
 import VideoCall from "../pages/VideoCall";
