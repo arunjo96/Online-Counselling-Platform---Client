@@ -1,109 +1,4 @@
-// import { useState } from "react";
-// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-// import { useResetPasswordMutation } from "../features/Api/authApi";
-// import { useParams, useNavigate } from "react-router-dom";
 
-// const ResetPassword = () => {
-//   const { token } = useParams();
-//   const [newPassword, setNewPassword] = useState("");
-//   const [confirmPassword, setConfirmPassword] = useState("");
-//   const [showNewPassword, setShowNewPassword] = useState(false);
-//   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-//   const [message, setMessage] = useState("");
-//   const [error, setError] = useState("");
-//   const [resetPassword, { isLoading }] = useResetPasswordMutation();
-//   const navigate = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setMessage("");
-//     setError("");
-//     if (newPassword !== confirmPassword) {
-//       setError("Passwords do not match");
-//       return;
-//     }
-//     try {
-//       await resetPassword({ token, newPassword }).unwrap();
-//       setMessage("Password reset successfully");
-//       setNewPassword("");
-//       setConfirmPassword("");
-//       setTimeout(() => navigate("/login"), 1500);
-//     } catch (err) {
-//       setError(err.data?.message || "Error resetting password");
-//     }
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center h-screen bg-gray-100">
-//       <form
-//         onSubmit={handleSubmit}
-//         className="bg-white p-8 rounded shadow w-96"
-//       >
-//         <h2 className="text-2xl font-bold mb-6 text-center">Reset Password</h2>
-//         {message && (
-//           <div className="mb-4 text-green-600 text-sm text-center font-medium">
-//             {message}
-//           </div>
-//         )}
-//         {error && (
-//           <div className="mb-4 text-red-600 text-sm text-center font-medium">
-//             {error}
-//           </div>
-//         )}
-//         <div className="relative mb-4">
-//           <input
-//             type={showNewPassword ? "text" : "password"}
-//             placeholder="New Password"
-//             className="w-full p-2 border rounded"
-//             value={newPassword}
-//             onChange={(e) => setNewPassword(e.target.value)}
-//           />
-//           <button
-//             type="button"
-//             className="absolute cursor-pointer inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500 hover:text-gray-700"
-//             onClick={() => setShowNewPassword((prev) => !prev)}
-//             tabIndex={-1}
-//           >
-//             {showNewPassword ? (
-//               <AiOutlineEyeInvisible className="h-5 w-5" />
-//             ) : (
-//               <AiOutlineEye className="h-5 w-5" />
-//             )}
-//           </button>
-//         </div>
-//         <div className="relative mb-4">
-//           <input
-//             type={showConfirmPassword ? "text" : "password"}
-//             placeholder="Confirm Password"
-//             className="w-full p-2 border rounded"
-//             value={confirmPassword}
-//             onChange={(e) => setConfirmPassword(e.target.value)}
-//           />
-//           <button
-//             type="button"
-//             className="absolute cursor-pointer inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500 hover:text-gray-700"
-//             onClick={() => setShowConfirmPassword((prev) => !prev)}
-//             tabIndex={-1}
-//           >
-//             {showConfirmPassword ? (
-//               <AiOutlineEyeInvisible className="h-5 w-5" />
-//             ) : (
-//               <AiOutlineEye className="h-5 w-5" />
-//             )}
-//           </button>
-//         </div>
-//         <button
-//           type="submit"
-//           className="w-full cursor-pointer bg-green-600 text-white py-2 rounded hover:bg-green-700"
-//         >
-//           {isLoading ? "Resetting..." : "Reset Password"}
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default ResetPassword;
 import { useState } from "react";
 import { useResetPasswordMutation } from "../features/Api/authApi";
 import { useParams, useNavigate, Link } from "react-router-dom";
@@ -174,16 +69,15 @@ const ResetPassword = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl shadow-xl overflow-hidden max-w-6xl w-full flex flex-col md:flex-row"
       >
-        {/* Left side - Image */}
+      
         <div className="md:w-1/2 relative hidden md:block">
           <img
-            src="/vector_img.jpg" // Replace with your reset password image
+            src="../assets/img/vector_img.jpg"
             alt="Reset your password"
             className="w-full h-full object-contain"
           />
         </div>
 
-        {/* Right side - Form */}
         <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-4">
@@ -198,7 +92,6 @@ const ResetPassword = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Success Message */}
             {message && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -210,7 +103,6 @@ const ResetPassword = () => {
               </motion.div>
             )}
 
-            {/* Error Message */}
             {error && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -222,7 +114,6 @@ const ResetPassword = () => {
               </motion.div>
             )}
 
-            {/* New Password Field */}
             <div>
               <label
                 htmlFor="newPassword"
@@ -270,7 +161,6 @@ const ResetPassword = () => {
               </div>
             </div>
 
-            {/* Confirm Password Field */}
             <div>
               <label
                 htmlFor="confirmPassword"
@@ -325,7 +215,6 @@ const ResetPassword = () => {
                 )}
             </div>
 
-            {/* Submit Button */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -349,7 +238,6 @@ const ResetPassword = () => {
               <div className="flex-grow border-t border-gray-200"></div>
             </div>
 
-            {/* Back to Login */}
             <div className="text-center">
               <Link
                 to="/login"

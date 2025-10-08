@@ -80,7 +80,7 @@ const Register = () => {
       >
         <div className="md:w-1/2 relative">
           <img
-            src="/vector_img.jpg"
+            src="../assets/img/vector_img.jpg"
             alt="Register to Counseling Services"
             className="w-full h-full object-contain"
           />

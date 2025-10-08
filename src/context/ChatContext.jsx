@@ -46,7 +46,7 @@ export const ChatProvider = ({ children }) => {
   const lastMessageTimeRef = useRef(Date.now());
   const isMountedRef = useRef(true);
 
-  // Group messages by date
+ 
   const groupedMessages = state.messages.reduce((groups, message) => {
     const date = new Date(message.createdAt).toDateString();
     if (!groups[date]) {

@@ -12,6 +12,7 @@ import {
   AiOutlineMail,
   AiOutlineWarning,
   AiOutlineUser,
+  AiOutlineHome,
 } from "react-icons/ai";
 
 const Login = () => {
@@ -70,7 +71,7 @@ const Login = () => {
       >
         <div className="md:w-1/2 relative">
           <img
-            src="/vector_img.jpg"
+            src="../assets/img/vector_img.jpg"
             alt="Counseling Services"
             className="w-full h-full object-contain"
           />
@@ -212,7 +213,7 @@ const Login = () => {
             <span className="mx-3 text-sm text-gray-500">or</span>
             <div className="flex-grow border-t border-gray-200"></div>
           </div>
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 space-y-3">
             <p className="text-gray-600 text-sm">
               Don't have an account yet?{" "}
               <Link
@@ -222,6 +223,15 @@ const Login = () => {
                 Register
               </Link>
             </p>
+
+            {/* Home link added right after the registration prompt */}
+            <Link
+              to="/"
+              className="flex items-center justify-center text-green-600 hover:text-green-700 transition-colors"
+            >
+              <AiOutlineHome className="mr-1.5" />
+              <span className="font-medium">Back to Home</span>
+            </Link>
           </div>
         </div>
       </motion.div>
