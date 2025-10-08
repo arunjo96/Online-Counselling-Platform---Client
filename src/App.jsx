@@ -1,7 +1,7 @@
 
 import React from 'react'
 import './App.css'
-import AuthRoutes from './routes/authRoutes.jsx'
+import AuthRoutes from './routes/AuthRoutes.jsx'
 import { CallProvider } from "./context/ContextCall.jsx"
 import { ChatProvider } from './context/ChatContext.jsx'
 import { CounsellorProvider } from './context/Counsellor.jsx'
