@@ -64,6 +64,10 @@ The application uses Redux Toolkit for global state management with RTK Query fo
 - Proper form validation
 - Accessibility considerations
 
+## ⚠️ Nodemailer Issue !
+
+Important: Nodemailer works locally but may encounter issues in production environments due to email server restrictions or firewall configurations.
+
 ## ⚙️ Installation & Setup
 
  Clone the repo
