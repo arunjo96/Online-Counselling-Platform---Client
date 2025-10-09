@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiUsers, FiCalendar, FiMessageSquare, FiClock } from "react-icons/fi";
 
@@ -48,15 +48,11 @@ const ActionCard = ({
 };
 
 const DashboardActions = ({ role, onOpenAvailabilityModal }) => {
-  const navigate = useNavigate();
 
-  const navigateToCounsellors = () => {
-    window.location.href = "/counsellors";
-  };
 
   const clientActions = [
     {
-      onClick: navigateToCounsellors,
+      to: "/counsellors",
       icon: FiUsers,
       title: "Find Counsellors",
       description: "Browse our network of professional counsellors",
